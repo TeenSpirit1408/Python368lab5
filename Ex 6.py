@@ -1,16 +1,18 @@
 n = int(input())
 A = list(map(int, input().split()))
 if len(A) == n:
-    max = max(A) + 1
-    min = min(A) - 1
+    max = max(A)
+    min = min(A)
     k = 0
     l = max
     for i in range(n//2):
         for j in range(n):
-            if (A[i] > k) and (A[i] < max):
-                k = A[i]
-            if (A[i] < l) and (A[i] > min):
-                l = A[i]
+            if (A[j] > k) and (A[j] < max):
+                k = A[j]
+            if (A[j] < l) and (A[j] > min):
+                l = A[j]
         max = k
         min = l
-    print(max, min)
+        k = 0
+        l = max
+    print(min)
